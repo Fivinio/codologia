@@ -1,0 +1,56 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+//void MainWindow::on_button_clicked()
+//{
+   // int a=ui->firstNumber->toPlainText().toUInt();
+   // int b=ui->secondNumber->toPlainText().toUInt();
+   // int c=a+b;
+   // ui->result->setPlainText(QString::number(c));
+//}
+
+void MainWindow::on_button_plus_clicked()
+{
+    int a1=ui->Number1->toPlainText().toInt();
+    int b1=ui->Number2->toPlainText().toInt();
+    int c1=a1+b1;
+    ui->result_plus->setPlainText(QString::number(c1));
+}
+void MainWindow::on_button_minus_clicked()
+{
+    int a2=ui->Number3->toPlainText().toInt();
+    int b2=ui->Number4->toPlainText().toInt();
+    int c2=a2-b2;
+    ui->result_minus->setPlainText(QString::number(c2));
+}
+void MainWindow::on_button_multiple_clicked()
+{
+    int a3=ui->Number5->toPlainText().toInt();
+    int b3=ui->Number6->toPlainText().toInt();
+    int c3=a3*b3;
+    ui->result_multiple->setPlainText(QString::number(c3));
+}
+void MainWindow::on_button_division_clicked()
+{
+    int a4=ui->Number7->toPlainText().toInt();
+    int b4=ui->Number8->toPlainText().toInt();
+    int c4=0;
+    if (b4==0){
+        ui->result_division->setPlainText("non");
+    }
+    else{
+        c4=a4/b4;
+        ui->result_division->setPlainText(QString::number(c4));
+    }
+}
